@@ -99,7 +99,7 @@ def ListFilesToTxt(dir, file, wildcard, recursion):
 def Test():
     dir = "C:\\Users\\13987\\PycharmProjects\\untitled2"
     outfile = "filelist.txt"
-    wildcard = ".py ..java .c .mk"
+    wildcard = ".py .java .c .mk"
 
     file = open(outfile, "w")
     if not file:

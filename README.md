@@ -7,9 +7,11 @@ get the commentline, blankline and codeline, comment rate,total line
 - total line
 - comment rate
 ## how to use
-You should write the absolute position of the file into the "filelist.txt" like this 
+Maybe you should change the flowing two line:
 
 ```
-C:\Users\13987\PycharmProjects\LOC\skciti.py
+    listTxt = "C:\\Users\\13987\\PycharmProjects\\untitled2\\"
+    dir = "C:\\Users\\13987\\PycharmProjects\\untitled2"
+
 ```
 **File type** mainly supports java, python, JS, Makefile and so on.

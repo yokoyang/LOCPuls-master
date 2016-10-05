@@ -1,6 +1,7 @@
 # * coding:UTF-8
 # *_author_='Yang'
 import re
+import os
 
 commentline = 0
 blankline = 0
@@ -80,7 +81,36 @@ def count_mk_like(filename):
     return "OK"
 
 
+def ListFilesToTxt(dir, file, wildcard, recursion):
+    exts = wildcard.split(" ")
+    files = os.listdir(dir)
+    listTxt = "C:\\Users\\13987\\PycharmProjects\\untitled2\\"
+    for name in files:
+        fullname = os.path.join(dir, name)
+        if (os.path.isdir(fullname) & recursion):
+            ListFilesToTxt(fullname, file, wildcard, recursion)
+        else:
+            for ext in exts:
+                if (name.endswith(ext)):
+                    file.write(listTxt + name + "\n")
+                    break
+
+
+def Test():
+    dir = "C:\\Users\\13987\\PycharmProjects\\untitled2"
+    outfile = "filelist.txt"
+    wildcard = ".py ..java .c .mk"
+
+    file = open(outfile, "w")
+    if not file:
+        print ("cannot open the file %s for writing" % outfile)
+    ListFilesToTxt(dir, file, wildcard, 1)
+
+    file.close()
+
+
 def main():
+    Test()
     try:
         f = open("filelist.txt", 'r')
     except IOError, e:

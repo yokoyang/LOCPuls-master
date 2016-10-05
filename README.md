@@ -6,6 +6,7 @@ get the commentline, blankline and codeline, comment rate,total line
 - blank line
 - total line
 - comment rate
+
 ## how to use
 Maybe you should change the flowing two line:
 
